@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIVE & RIDE | Motor Experience</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #101010;
+            color: white;
+        }
+
+        /* NAVEGACIÓN */
+
+        header {
+            height: 85px;
+            background: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            border-bottom: 1px solid #292929;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        /* PORTADA */
+
+        .hero {
+            height: 650px;
+            background:
+                linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)),
+                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #e63946;
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 16px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #111;
+            transform: translateY(-3px);
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #e63946;
+        }
+
+        .section-title p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* VEHÍCULOS */
+
+        .vehicles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .vehicle-card {
+            background: #1b1b1b;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .vehicle-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .vehicle-info {
+            padding: 25px;
+        }
+
+        .vehicle-info h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .vehicle-info p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .vehicle-info a {
+            color: #e63946;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* BANNER */
+
+        .banner {
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85');
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .banner h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* CONTACTO */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #aaa;
+            margin: 15px 0 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #080808;
+            padding: 35px 8%;
+            text-align: center;
+            border-top: 1px solid #292929;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* MÓVILES */
+
+        @media (max-width: 850px) {
+            header {
+                height: auto;
+                padding: 25px 5%;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .hero {
+                height: 550px;
+                padding: 0 7%;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .vehicles {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .banner h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ -->
+
+    <header>
+        <div class="logo">DRIVE <span>&</span> RIDE</div>
+
+        <nav>
+            <a href="#inicio">INICIO</a>
+            <a href="#coches">COCHES</a>
+            <a href="#motos">MOTOS</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+    </header>
+
+    <!-- PORTADA -->
+
+    <div class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>VIVE LA<br>VELOCIDAD <span>SIN LÍMITES.</span></h1>
+
+            <p>
+                Descubre el apasionante mundo del motor.
+                Los mejores coches deportivos, motos exclusivas
+                y las últimas novedades del sector.
+            </p>
+
+            <a href="#coches" class="btn">DESCUBRIR VEHÍCULOS</a>
+        </div>
+    </div>
+
+    <!-- COCHES -->
+
+    <section id="coches">
+
+        <div class="section-title">
+            <h2>COCHES <span>DESTACADOS</span></h2>
+            <p>Potencia, elegancia y tecnología sobre cuatro ruedas.</p>
+        </div>
+
+        <div class="vehicles">
+
+            <div class="vehicle-card">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85">
+
+                <div class="vehicle-info">
+                    <h3>Porsche 911</h3>
+                    <p>Deportivo de altas prestaciones que combina diseño, potencia y precisión.</p>
+                    <a href="#contacto">DESCUBRIR MÁS →</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=85">
+
+                <div class="vehicle-info">
+                    <h3>BMW Deportivo</h3>
+                    <p>Ingeniería alemana, rendimiento excepcional y un diseño inconfundible.</p>
+                    <a href="#contacto">DESCUBRIR MÁS →</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card">
+                <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=900&q=85">
+
+                <div class="vehicle-info">
+                    <h3>Superdeportivos</h3>
+                    <p>Descubre vehículos diseñados para ofrecer emociones extraordinarias.</p>
+                    <a href="#contacto">DESCUBRIR MÁS →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MOTOS -->
+
+    <section id="motos">
+
+        <div class="section-title">
+            <h2>MOTOS <span>DESTACADAS</span></h2>
+            <p>Libertad, adrenalina y pasión por las dos ruedas.</p>
+        </div>
+
+        <div class="vehicles">
+
+            <div class="vehicle-card">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85">
+
+                <div class="vehicle-info">
+                    <h3>Yamaha R1</h3>
+                    <p>Una motocicleta deportiva creada para los amantes de la velocidad.</p>
+                    <a href="#contacto">DESCUBRIR MÁS →</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card">
+                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85">
+
+                <div class="vehicle-info">
+                    <h3>BMW Motorrad</h3>
+                    <p>Diseño, tecnología y rendimiento para disfrutar de cada kilómetro.</p>
+                    <a href="#contacto">DESCUBRIR MÁS →</a>
+                </div>
+            </div>
+
+            <div class="vehicle-card">
+                <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85">
+
+                <div class="vehicle-info">
+                    <h3>Motos deportivas</h3>
+                    <p>Descubre máquinas que llevan la experiencia de conducción a otro nivel.</p>
+                    <a href="#contacto">DESCUBRIR MÁS →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER -->
+
+    <div class="banner">
+        <h2>EL MOTOR ES NUESTRA PASIÓN</h2>
+
+        <p>
+            No se trata solamente de conducir.
+            Se trata de sentir cada momento.
+        </p>
+
+        <a href="#contacto" class="btn">CONTACTAR</a>
+    </div>
+
+    <!-- CONTACTO -->
+
+    <section class="contact" id="contacto">
+
+        <div class="section-title">
+            <h2>CONTACTA CON <span>NOSOTROS</span></h2>
+
+            <p>
+                ¿Te apasiona el mundo del motor?
+                Estamos aquí para ayudarte.
+            </p>
+        </div>
+
+        <a href="mailto:info@driveandride.com" class="btn">
+            ENVIAR UN CORREO
+        </a>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+        <p>© 2026 DRIVE & RIDE | MOTOR EXPERIENCE</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
